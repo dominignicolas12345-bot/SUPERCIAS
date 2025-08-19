@@ -1,0 +1,329 @@
+/*
+  Enhanced Frontend Styles for SuperCías TXT Generator
+
+  This stylesheet defines a modern, professional and minimalistic design
+  that can be reused across all pages of the application. It introduces
+  a dark sidebar for navigation, a light header for user context and a
+  spacious main content area with cards, tables and alerts. Colours and
+  spacing are defined as CSS variables to simplify future theming.
+*/
+
+:root {
+  --primary: #007ACC;
+  --secondary: #009FDB;
+  --accent: #F5F7FA;
+  --dark: #1E2A38;
+  --light: #FFFFFF;
+  --text-dark: #333333;
+  --text-light: #888888;
+  --danger: #E74C3C;
+  --warning: #E67E22;
+  --info: #3498DB;
+  --success: #27AE60;
+  --radius: 8px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: var(--accent);
+  color: var(--text-dark);
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 240px;
+  background-color: var(--dark);
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .logo {
+  padding: 1.5rem 1.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.sidebar nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.95rem;
+  color: var(--light);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar nav a span:first-child {
+  font-size: 1.2rem;
+  margin-right: 0.75rem;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+/* Header */
+.header {
+  margin-left: 240px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--light);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header .user {
+  display: flex;
+  align-items: center;
+}
+
+.header .avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #cccccc;
+  margin-right: 0.5rem;
+}
+
+.header .name {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+/* Main content area */
+.main {
+  margin-left: 240px;
+  padding: 2rem;
+  min-height: calc(100vh - 60px);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* Cards */
+.card {
+  background-color: var(--light);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+/* KPI Grid */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.kpi-card {
+  background-color: var(--light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.kpi-card .label {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.kpi-card .value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Table Styles */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+table tr:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+table tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Buttons */
+button {
+  background-color: var(--primary);
+  color: var(--light);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--secondary);
+}
+
+/* Form Inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Upload Box */
+.upload-box {
+  border: 2px dashed #cccccc;
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.upload-box:hover {
+  border-color: var(--primary);
+  background-color: #eef5fe;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Alerts */
+.alert {
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.alert-error {
+  background-color: #fdecea;
+  color: var(--danger);
+}
+
+.alert-warning {
+  background-color: #fff7e6;
+  color: var(--warning);
+}
+
+.alert-info {
+  background-color: #eaf4fc;
+  color: var(--info);
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+  color: var(--success);
+}
+
+/* Login page */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--accent);
+}
+
+.login-card {
+  width: 350px;
+  max-width: 90%;
+  background-color: var(--light);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.login-card p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+.login-card form input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.login-card button {
+  width: 100%;
+}
+
+.login-card a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.login-card a:hover {
+  text-decoration: underline;
+}
